@@ -256,31 +256,76 @@
 //}
 
 //Solution of Diamond Problem
+//using System;
+//namespace logicals
+//{
+//    interface IA
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Interface A.");
+//        }
+//    }
+//    interface IB : IA { };
+//    interface IC : IA { };
+//    class D : IB, IC
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Class D");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            D d = new D();
+//            d.print();
+//        }
+//    }
+//}
+
+
+
+//Encapsulation
 using System;
-namespace logicals
+namespace encapsulation
 {
-    interface IA
+    class rectangleArea
     {
-        public void print()
+        private double length;
+        private double width;
+
+        public double Length
         {
-            Console.WriteLine("Interface A.");
+            get { return length; }
+            set { length = value; }
         }
-    }
-    interface IB : IA { };
-    interface IC : IA { };
-    class D : IB, IC
-    {
-        public void print()
+
+        public double Width
         {
-            Console.WriteLine("Class D");
+            get { return width; }
+            set { width = value; }
+        }
+        public double getArea()
+        {
+            return length * width;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Length : {length} and Width : {width}");
+            Console.WriteLine("Area : " + getArea());
         }
     }
     class Program
     {
         public static void Main(string[] args)
         {
-            D d = new D();
-            d.print();
+            rectangleArea r = new rectangleArea();
+            r.Length = 9.0;
+            r.Width = 9.0;
+            r.Print();
         }
     }
 }
