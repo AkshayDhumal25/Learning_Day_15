@@ -200,17 +200,57 @@
 
 
 // Lamda Function
+//using System;
+//using System.Linq;
+//using System.Collections.Generic;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] agrs)
+//        {
+//            Func<int, int> square = x => x * x;
+//            Console.WriteLine(square(5));
+//        }
+//    }
+//}
+
+
+//Find the missing number from the array
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 1, 2, 3, 5 };
+//            int n = array.Length + 1;
+//            int realSum = n * (n + 1) / 2;
+//            int currentSum = 0;
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                currentSum += array[i];
+//            }
+//            Console.WriteLine(realSum - currentSum);
+
+//        }
+//    }
+//}
+
+
+// Find the sqaure root of the number;
 using System;
-using System.Linq;
-using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
-        public static void Main(string[] agrs)
+        public static void Main(string[] args)
         {
-            Func<int, int> square = x => x * x;
-            Console.WriteLine(square(5));
+            Console.WriteLine("Enter the number : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            var res = Math.Sqrt(n);
+            Console.WriteLine(res);
         }
     }
 }
