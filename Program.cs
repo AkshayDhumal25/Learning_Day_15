@@ -332,28 +332,53 @@
 
 
 //Generics 
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the 1st Element : ");
+//            var a = Console.ReadLine();
+//            Console.WriteLine("Enter the 2nd Element : ");
+//            var b = Console.ReadLine();
+//            swap(ref a, ref b);
+
+//        }
+
+//        public static void swap<T>(ref T a, ref T b)
+//        {
+//            var temp = a;
+//            a = b;
+//            b = temp;
+
+//            Console.WriteLine($"A: {a} and B: {b}");
+//        }
+//    }
+//}
+
+
+//delegate
 using System;
 namespace logicals
 {
+
     class Program
     {
+        public delegate int addition(int x, int y);
+        public static int add(int a, int b)
+        {
+            return a + b;
+        }
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the 1st Element : ");
-            var a = Console.ReadLine();
-            Console.WriteLine("Enter the 2nd Element : ");
-            var b = Console.ReadLine();
-            swap(ref a, ref b);
-
-        }
-
-        public static void swap<T>(ref T a, ref T b)
-        {
-            var temp = a;
-            a = b;
-            b = temp;
-
-            Console.WriteLine($"A: {a} and B: {b}");
+            addition a = new addition(add);
+            var res = a(6, 6);
+            Console.WriteLine(res);
         }
     }
+
 }
+
+
