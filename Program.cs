@@ -135,27 +135,82 @@
 
 
 // 5. WAP to find missing elements from the array?
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] str)
+//        {
+//            int[] array = { 1, 2, 3, 5, 6, 8, 9, 10 };
+//            int min = array.Min();
+//            int max = array.Max();
+
+//            var list = new List<int>(array);
+//            for (int i = min; i < max; i++)
+//            {
+//                if (!list.Contains(i))
+//                {
+//                    Console.WriteLine(i + " ");
+//                }
+//            }
+//        }
+//    }
+//}
+
+// 6. WAP to find the given string is Palindrome or not.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "acbaa";
+//            if (isPalindrome(str))
+//            {
+//                Console.WriteLine("Palindrome");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Not Palindrome");
+//            }
+//        }
+
+//        public static bool isPalindrome(string str)
+//        {
+//            int left = 0;
+//            int right = str.Length - 1;
+//            while (left < right)
+//            {
+//                if (str[left] != str[right])
+//                {
+//                    return false;
+//                }
+//                left++;
+//                right--;
+//            }
+//            return true;
+//        }
+//    }
+//}
+
+
+
+// Lamda Function
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
-        public static void Main(string[] str)
+        public static void Main(string[] agrs)
         {
-            int[] array = { 1, 2, 3, 5, 6, 8, 9, 10 };
-            int min = array.Min();
-            int max = array.Max();
-
-            var list = new List<int>(array);
-            for (int i = min; i < max; i++)
-            {
-                if (!list.Contains(i))
-                {
-                    Console.WriteLine(i + " ");
-                }
-            }
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(5));
         }
     }
 }
