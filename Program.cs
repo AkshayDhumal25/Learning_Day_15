@@ -240,17 +240,47 @@
 
 
 // Find the sqaure root of the number;
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            var res = Math.Sqrt(n);
+//            Console.WriteLine(res);
+//        }
+//    }
+//}
+
+//Solution of Diamond Problem
 using System;
 namespace logicals
 {
+    interface IA
+    {
+        public void print()
+        {
+            Console.WriteLine("Interface A.");
+        }
+    }
+    interface IB : IA { };
+    interface IC : IA { };
+    class D : IB, IC
+    {
+        public void print()
+        {
+            Console.WriteLine("Class D");
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            var res = Math.Sqrt(n);
-            Console.WriteLine(res);
+            D d = new D();
+            d.print();
         }
     }
 }
