@@ -360,25 +360,67 @@
 
 
 //delegate
+//using System;
+//namespace logicals
+//{
+
+//    class Program
+//    {
+//        public delegate int addition(int x, int y);
+//        public static int add(int a, int b)
+//        {
+//            return a + b;
+//        }
+//        public static void Main(string[] args)
+//        {
+//            addition a = new addition(add);
+//            var res = a(6, 6);
+//            Console.WriteLine(res);
+//        }
+//    }
+
+//}
+
+
+
+//Delegates
+//using System;
+//namespace delegates
+//{
+//    class Program
+//    {
+//        public delegate int addition(int x, int y);
+//        public static int add(int a, int b)
+//        {
+//            return a + b;
+//        }
+//        public static void Main(string[] args)
+//        {
+//            addition a = new addition(add);
+//            var sum = a(5, 6);
+//            Console.WriteLine(sum);
+//        }
+//    }
+//}
+
+
+// Reverse Number
 using System;
 namespace logicals
 {
-
     class Program
     {
-        public delegate int addition(int x, int y);
-        public static int add(int a, int b)
-        {
-            return a + b;
-        }
         public static void Main(string[] args)
         {
-            addition a = new addition(add);
-            var res = a(6, 6);
+            int n = 123;
+            int res = 0;
+            while (n > 0)
+            {
+                int reminder = n % 10;
+                res = res * 10 + reminder;
+                n /= 10;
+            }
             Console.WriteLine(res);
         }
     }
-
 }
-
-
