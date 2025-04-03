@@ -405,22 +405,55 @@
 
 
 // Reverse Number
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int n = 123;
+//            int res = 0;
+//            while (n > 0)
+//            {
+//                int reminder = n % 10;
+//                res = res * 10 + reminder;
+//                n /= 10;
+//            }
+//            Console.WriteLine(res);
+//        }
+//    }
+//}
+
+
+// 19. count lowercase and uppercase
+// input = &quot;Hello world!&quot;
+// output = uppercase = 1, lowercase = 9
 using System;
+using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            int n = 123;
-            int res = 0;
-            while (n > 0)
+            string str = "Hello World";
+            int upperCount = 0;
+            int lowerCount = 0;
+            for (int i = 0; i < str.Length; i++)
             {
-                int reminder = n % 10;
-                res = res * 10 + reminder;
-                n /= 10;
+                if (char.IsUpper(str[i]))
+                {
+                    upperCount++;
+                }
+                else
+                {
+                    lowerCount++;
+                }
             }
-            Console.WriteLine(res);
+
+            Console.WriteLine(upperCount);
+            Console.WriteLine(lowerCount);
         }
     }
 }
