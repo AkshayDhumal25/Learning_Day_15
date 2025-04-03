@@ -288,44 +288,72 @@
 
 
 //Encapsulation
+//using System;
+//namespace encapsulation
+//{
+//    class rectangleArea
+//    {
+//        private double length;
+//        private double width;
+
+//        public double Length
+//        {
+//            get { return length; }
+//            set { length = value; }
+//        }
+
+//        public double Width
+//        {
+//            get { return width; }
+//            set { width = value; }
+//        }
+//        public double getArea()
+//        {
+//            return length * width;
+//        }
+
+//        public void Print()
+//        {
+//            Console.WriteLine($"Length : {length} and Width : {width}");
+//            Console.WriteLine("Area : " + getArea());
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            rectangleArea r = new rectangleArea();
+//            r.Length = 9.0;
+//            r.Width = 9.0;
+//            r.Print();
+//        }
+//    }
+//}
+
+
+//Generics 
 using System;
-namespace encapsulation
+namespace logicals
 {
-    class rectangleArea
-    {
-        private double length;
-        private double width;
-
-        public double Length
-        {
-            get { return length; }
-            set { length = value; }
-        }
-
-        public double Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-        public double getArea()
-        {
-            return length * width;
-        }
-
-        public void Print()
-        {
-            Console.WriteLine($"Length : {length} and Width : {width}");
-            Console.WriteLine("Area : " + getArea());
-        }
-    }
     class Program
     {
         public static void Main(string[] args)
         {
-            rectangleArea r = new rectangleArea();
-            r.Length = 9.0;
-            r.Width = 9.0;
-            r.Print();
+            Console.WriteLine("Enter the 1st Element : ");
+            var a = Console.ReadLine();
+            Console.WriteLine("Enter the 2nd Element : ");
+            var b = Console.ReadLine();
+            swap(ref a, ref b);
+
+        }
+
+        public static void swap<T>(ref T a, ref T b)
+        {
+            var temp = a;
+            a = b;
+            b = temp;
+
+            Console.WriteLine($"A: {a} and B: {b}");
         }
     }
 }
